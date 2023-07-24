@@ -1,7 +1,9 @@
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 function Layout() {
+  const navigate = useNavigate();
+
   return (
     <>
       <AppBar position="static">
@@ -13,12 +15,26 @@ function Layout() {
             aria-label="menu"
             sx={ { mr: 2 } }
           />
-          <Typography variant="h6" component="div" sx={ { flexGrow: 1 } }>
-            João lucas
+          <Typography
+            onClick={ () => navigate('/') }
+            variant="h6"
+            component="div"
+            sx={ { flexGrow: 1 } }
+          >
+            {'<DevJoão/>'}
           </Typography>
-          <Button color="inherit">Sobre</Button>
-          <Button color="inherit">Projetos</Button>
-          <Button color="inherit">Contato</Button>
+          <Button
+            onClick={ () => navigate('/contato') }
+            color="inherit"
+          >
+            Contato
+          </Button>
+          <Button
+            onClick={ () => navigate('/projetos') }
+            color="inherit"
+          >
+            Projetos
+          </Button>
         </Toolbar>
       </AppBar>
       <main>
