@@ -26,7 +26,6 @@ function Contato() {
       {
         display: 'flex',
         justifyContent: 'center',
-        height: '93vh',
       }
     }
     >
@@ -38,6 +37,7 @@ function Contato() {
           justifyContent: 'center',
           alignItems: 'center',
           textAlign: 'center',
+          height: { sm: '55rem', xs: '45rem' },
         }
       }
       >
